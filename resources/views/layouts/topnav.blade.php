@@ -46,9 +46,12 @@
         </ul>
     </div>
     @else
+            <a href="#activities_overview" class="sidebar-toggle">
+                Ongoing Activities
+            </a>
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-              <li>
+              <li class="user user-menu">
                   <a href="/auth/login" class="btn btn-flat" style="max-height: 50px">
                       <i class="fa fa-lock"></i> Login
                   </a>

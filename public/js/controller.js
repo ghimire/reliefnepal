@@ -83,6 +83,14 @@ define([
         });
       },
 
+      activities_overview:function () {
+        var activities = new ActivityModels.Activities();
+        activities.setFilters();
+        activities.fetch().then(function(){
+          App.mainRegion.showAnimated(new ActivityListView({collection: activities}), {animationType: 'fadeIn'});
+        });
+      },
+
       users:function () {
         var users = new UserModels.Users();
         users.fetch().then(function(){

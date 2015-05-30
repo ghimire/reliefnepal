@@ -126,8 +126,7 @@ define( [
 
         view.model.save(data, {
           success: function(model, response, xhr){
-
-            Backbone.history.navigate('organizations/' + view.model.org_id + '/activities', {trigger: true});
+            window.history.back();
           },
           error: function(model, error, options){
             App.page.scrollTop();

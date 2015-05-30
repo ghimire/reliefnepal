@@ -33,11 +33,6 @@ class ActivitiesController extends Controller {
     public function index(Request $request)
     {
         $activities = Activity::where('1','1');
-        if(Auth::check()){
-            if (!$request->user()->has_role('admin')) {
-                $this->require_user($request);
-            }
-        }
 
         if ($request->has('user_id')){
             $activities = $activities->whereHas('organization', function ($query) use ($request) {

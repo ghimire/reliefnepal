@@ -123,7 +123,8 @@
         // Animate and Display Login Modal
         var animations = ["bounce", "flash", "pulse", "rubberBand", "shake", "swing", "tada", "wobble", "bounceIn", "bounceInDown", "bounceInLeft", "bounceInRight", "bounceInUp", "fadeIn", "fadeInDown", "fadeInDownBig", "fadeInLeft", "fadeInLeftBig", "fadeInRight", "fadeInRightBig", "fadeInUp", "fadeInUpBig", "flipInX", "flipInY", "lightSpeedIn", "rotateIn", "rotateInDownLeft", "rotateInDownRight", "rotateInUpLeft", "rotateInUpRight", "rollIn", "zoomIn", "zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp", "slideInDown", "slideInLeft", "slideInRight", "slideInUp"];
         var animation = animations[Math.floor(Math.random()*animations.length)];
-        $(".login-box").show().addClass("animated " + animation);
+        //$(".login-box").show().addClass("animated " + animation);
+        $(".login-box").show().addClass("animated bounceInDown");
 
         var backgrounds = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg'];
         var background = backgrounds[Math.floor(Math.random()*backgrounds.length)];

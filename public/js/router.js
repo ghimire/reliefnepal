@@ -12,6 +12,8 @@ define(['backbone', 'marionette'], function(Backbone, Marionette) {
            'organizations/:org_id/activities/:activity_id/edit': 'activities_edit',
            'organizations/:org_id/activities/:activity_id': 'activities_show',
 
+           'activities_overview': 'activities_overview',
+
            'users': 'users',
            'users/add': 'users_add',
            'users/:user_id/edit': 'users_edit',

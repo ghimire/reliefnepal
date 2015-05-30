@@ -1,0 +1,12 @@
+<td>
+    <a href="#/organizations/<%- org_id %>">
+        <%- organization['name'] %>
+    </a>
+</td>
+<td class="js-show-info">
+  <a href="<%- show_url() %>">
+    <%- name %>
+  </a>
+</td>
+<td><%- address %></td>
+<td><%- moment(updated_at + " +00:00").fromNow() %></td>

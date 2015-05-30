@@ -112,8 +112,7 @@ define( [
 
       _cancel: function(evt){
         evt.preventDefault();
-        //Backbone.history.navigate('organizations', {trigger: true});
-        window.history.back()
+        window.history.back();
       },
 
       _saveImage: function(evt, file) {
