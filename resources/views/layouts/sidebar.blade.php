@@ -1,6 +1,6 @@
 <!-- sidebar: style can be found in sidebar.less -->
+@if ($user)
 <section class="sidebar">
-
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel">
         <div class="pull-left image">
@@ -41,3 +41,4 @@
     </ul><!-- /.sidebar-menu -->
 </section>
 <!-- /.sidebar -->
+@endif

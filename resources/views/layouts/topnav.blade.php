@@ -4,6 +4,7 @@
         <span class="sr-only">Toggle navigation</span>
     </a>
     <!-- Navbar Right Menu -->
+    @if($user)
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
             <!-- User Account Menu -->
@@ -42,4 +43,5 @@
             </li>
         </ul>
     </div>
+    @endif
 </nav>

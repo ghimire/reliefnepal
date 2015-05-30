@@ -13,18 +13,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="_token" content="{{ csrf_token() }}"/>
 
     @section('head')
-        <link href="{{ asset('/libs/bower_components/admin-lte/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('/libs/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('/libs/bower_components/ionicons/css/ionicons.min.css') }}" rel="stylesheet" type="text/css" />
-        {{--<link href="{{ asset('/libs/bower_components/admin-lte/plugins/iCheck/flat/blue.css') }}" rel="stylesheet" type="text/css" />--}}
-        <link href="{{ asset('/libs/bower_components/animate.css/animate.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('/libs/bower_components/admin-lte/dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('/libs/bower_components/admin-lte/dist/css/skins/skin-green.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('/libs/vendor/admin-lte/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('/libs/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+        {{--<link href="{{ asset('/libs/vendor/admin-lte/plugins/iCheck/flat/blue.css') }}" rel="stylesheet" type="text/css" />--}}
+        <link href="{{ asset('/libs/vendor/animate.css/animate.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('/libs/vendor/admin-lte/dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('/libs/vendor/admin-lte/dist/css/skins/skin-green.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('/css/custom-skin.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/auth.css') }}" rel="stylesheet">
 
         <!--[if lt IE 9]>
-        <script src="{{ asset('/libs/bower_components/html5shiv/dist/html5shiv.js') }}"></script>
+        <script src="{{ asset('/libs/vendor/html5shiv/dist/html5shiv.js') }}"></script>
         <![endif]-->
     @show
 </head>
@@ -44,9 +43,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <div class="main-wrapper">
         <!-- Left side column. contains the logo and sidebar -->
+        @if($user)
         <aside class="main-sidebar">
             @include('layouts.sidebar')
         </aside>
+        @endif
 
         <!-- Content Wrapper. Contains page content -->
         <div data-container="page" class="content-wrapper box box-default">
@@ -67,14 +68,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </div><!-- ./wrapper -->
 
 @section('scripts')
-    <script src="{{ asset('/libs/bower_components/modernizr/modernizr.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/libs/vendor/modernizr/modernizr.js') }}" type="text/javascript"></script>
     <script>
         var GLOBAL = {
+            @if($user)
             'user': {
               "id": "{{ $user->id }}",
               "is_admin": "{{ $user->is_admin() }}" === "1",
               "roles": "{{ $user->roles }}"
             },
+            @else
+            'user': {
+                "id": null,
+                "is_admin": false,
+                "roles": ""
+            },
+            @endif
             'STATIC_URL': "{{ asset('/') }}",
             'DEFAULT_AVATAR': "{{ asset('/img/avatars/user-160x160.jpg') }}",
             'DEFAULT_ORGANIZATION': "{{ asset('/img/profiles/organization-500x250.png') }}"
@@ -85,46 +94,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
             waitSeconds: 60,
             paths: {
                 'async': 'libs/vendor/require-plugins/async.min',
-                'backbone': 'libs/bower_components/backbone/backbone',
-                'backbone.validateAll': 'libs/bower_components/Backbone.validateAll/src/javascripts/Backbone.validateAll.min',
-                'backbone.validation': 'libs/bower_components/backbone.validation/dist/backbone-validation-min',
-                'marionette': 'libs/bower_components/marionette/lib/backbone.marionette.min',
+                'backbone': 'libs/vendor/backbone/backbone',
+                'backbone.validateAll': 'libs/vendor/Backbone.validateAll/src/javascripts/Backbone.validateAll.min',
+                'backbone.validation': 'libs/vendor/backbone.validation/backbone-validation-min',
+                'marionette': 'libs/vendor/marionette/lib/backbone.marionette.min',
                 'marionette.showanimated': 'libs/vendor/marionette.showanimated/marionette.showanimated',
                 'tweenmax': 'libs/vendor/tweenmax/tweenmax.min',
 
-                'bootstrap': 'libs/bower_components/admin-lte/bootstrap/js/bootstrap.min',
-                'bootstrap.datatables': 'libs/bower_components/admin-lte/plugins/datatables/dataTables.bootstrap',
-                'bootstrap.daterangepicker': 'libs/bower_components/admin-lte/plugins/daterangepicker/daterangepicker',
-                'bootstrap.datepicker': 'libs/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min',
-                'bootstrap.timepicker': 'libs/bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.min',
-                'bootstrap.select2': 'libs/bower_components/select2/select2.min',
-                'bootstrap.slider': 'libs/bower_components/admin-lte/plugins/bootstrap-slider/bootstrap-slider',
-                'bootstrap.switch': 'libs/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min',
+                'bootstrap': 'libs/vendor/admin-lte/bootstrap/js/bootstrap.min',
+                'bootstrap.datatables': 'libs/vendor/admin-lte/plugins/datatables/dataTables.bootstrap',
+                'bootstrap.daterangepicker': 'libs/vendor/admin-lte/plugins/daterangepicker/daterangepicker',
+                'bootstrap.datepicker': 'libs/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min',
+                'bootstrap.timepicker': 'libs/vendor/admin-lte/plugins/timepicker/bootstrap-timepicker.min',
+                'bootstrap.select2': 'libs/vendor/select2/select2.min',
+                'bootstrap.switch': 'libs/vendor/bootstrap-switch/dist/js/bootstrap-switch.min',
                 'image.uploader': 'libs/vendor/image-uploader/image-uploader',
 
-                'jquery': 'libs/bower_components/admin-lte/plugins/jQuery/jQuery-2.1.3.min',
-                'jquery.ui': 'libs/bower_components/admin-lte/plugins/jQueryUI/jquery-ui-1.10.3.min',
-                'jquery.datatables': 'libs/bower_components/admin-lte/plugins/datatables/jquery.dataTables',
-                'jquery.inputmask': 'libs/bower_components/admin-lte/plugins/input-mask/jquery.inputmask',
-                'jquery.slimscroll': 'libs/bower_components/admin-lte/plugins/slimScroll/jquery.slimscroll.min',
-                'jquery.serializejson': 'libs/bower_components/jquery.serializeJSON/jquery.serializejson.min',
+                'jquery': 'libs/vendor/admin-lte/plugins/jQuery/jQuery-2.1.3.min',
+                'jquery.ui': 'libs/vendor/admin-lte/plugins/jQueryUI/jquery-ui-1.10.3.min',
+                'jquery.datatables': 'libs/vendor/admin-lte/plugins/datatables/jquery.dataTables',
+                'jquery.slimscroll': 'libs/vendor/admin-lte/plugins/slimScroll/jquery.slimscroll.min',
+                'jquery.serializejson': 'libs/vendor/jquery.serializeJSON/jquery.serializejson.min',
                 'jquery.geocomplete': 'libs/vendor/geocomplete/jquery.geocomplete',
 
-                'require-text': 'libs/bower_components/requirejs-text/text',
-                'require-css': 'libs/bower_components/require-css/css.min',
+                'require-text': 'libs/vendor/requirejs-text/text',
+                'require-css': 'libs/vendor/require-css/css.min',
 
-                'underscore': 'libs/bower_components/underscore/underscore-min',
+                'underscore': 'libs/vendor/underscore/underscore-min',
 
-                'moment': 'libs/bower_components/moment/min/moment.min',
-                'modernizr': 'libs/bower_components/modernizr/modernizr',
-                'fastclick': 'libs/bower_components/admin-lte/plugins/fastclick/fastclick.min',
-                'fullcalendar': 'libs/bower_components/admin-lte/plugins/fullcalendar/fullcalendar.min',
-                'icheck': 'libs/bower_components/admin-lte/plugins/iCheck/icheck.min',
-                'ionslider': 'libs/bower_components/admin-lte/plugins/ionslider/ion.rangeSlider.min',
-                'imagesloaded': 'libs/bower_components/imagesloaded/imagesloaded.pkgd.min',
+                'moment': 'libs/vendor/moment/moment.min',
+                'modernizr': 'libs/vendor/modernizr/modernizr',
+                'fastclick': 'libs/vendor/admin-lte/plugins/fastclick/fastclick.min',
+                'icheck': 'libs/vendor/admin-lte/plugins/iCheck/icheck.min',
+                'imagesloaded': 'libs/vendor/imagesloaded/imagesloaded.pkgd.min',
                 'md5': 'libs/vendor/md5/md5.min',
 
-                'adminlte': 'libs/bower_components/admin-lte/dist/js/app',
+                'adminlte': 'libs/vendor/admin-lte/dist/js/app.min',
                 'base.app': 'js/app'
             },
 
@@ -141,7 +146,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 'marionette': ['backbone'],
                 'marionette.showanimated': ['tweenmax', 'marionette'],
                 'tweenmax': ['jquery'],
-                'backbone-poller': ['backbone'],
                 'backbone.validateAll': ['backbone'],
                 'backbone.validation': ['backbone'],
 
@@ -149,17 +153,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 'bootstrap': ['jquery'],
                 'modernizr': {exports: 'Modernizr'},
                 'moment': { exports: 'moment' },
-                'fullcalendar': ['css!libs/bower_components/admin-lte/plugins/fullcalendar/fullcalendar.min'],
-                'icheck': ['css!libs/bower_components/admin-lte/plugins/iCheck/flat/blue'],
-                'ionslider': ['css!libs/bower_components/admin-lte/plugins/ionslider/ion.rangeSlider'],
+                'icheck': ['css!libs/vendor/admin-lte/plugins/iCheck/flat/blue'],
 
-                'bootstrap.datatables': ['bootstrap', 'jquery.datatables', 'css!libs/bower_components/admin-lte/plugins/datatables/dataTables.bootstrap'],
-                'bootstrap.daterangepicker': ['bootstrap', 'css!libs/bower_components/admin-lte/plugins/daterangepicker/daterangepicker-bs3'],
-                'bootstrap.datepicker': ['bootstrap', 'css!libs/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.min'],
-                'bootstrap.timepicker': ['bootstrap', 'css!libs/bower_components/admin-lte/plugins/timepicker/bootstrap-timepicker.min'],
-                'bootstrap.select2': ['bootstrap', 'css!libs/bower_components/select2/select2'],
-                'bootstrap.slider': ['bootstrap', 'css!libs/bower_components/admin-lte/plugins/bootstrap-slider/slider'],
-                'bootstrap.switch': ['bootstrap', 'css!libs/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min'],
+                'bootstrap.datatables': ['bootstrap', 'jquery.datatables', 'css!libs/vendor/admin-lte/plugins/datatables/dataTables.bootstrap'],
+                'bootstrap.daterangepicker': ['bootstrap', 'css!libs/vendor/admin-lte/plugins/daterangepicker/daterangepicker-bs3'],
+                'bootstrap.datepicker': ['bootstrap', 'css!libs/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.min'],
+                'bootstrap.timepicker': ['bootstrap', 'css!libs/vendor/admin-lte/plugins/timepicker/bootstrap-timepicker.min'],
+                'bootstrap.select2': ['bootstrap', 'css!libs/vendor/select2/select2'],
+                'bootstrap.switch': ['bootstrap', 'css!libs/vendor/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min'],
                 'image.uploader': ['bootstrap', 'css!libs/vendor/image-uploader/image-uploader'],
                 'md5': {exports: 'md5' },
 
@@ -167,9 +168,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     'jquery',
                     'bootstrap',
                     'jquery.ui', 'fastclick', 'jquery.slimscroll', 'icheck', 'marionette.showanimated'
-                    //'css!libs/bower_components/admin-lte/dist/css/AdminLTE.min',
-                    //'css!libs/bower_components/admin-lte/dist/css/skins/skin-blue.min',
-                    //'css!../css/app'
                 ],
 
                 'base.app': ['modernizr', 'adminlte', 'md5']

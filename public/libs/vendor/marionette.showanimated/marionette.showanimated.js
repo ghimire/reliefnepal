@@ -27,35 +27,6 @@ _.extend(Marionette.Region.prototype, {
         TweenMax.to(newView.$el, 0.5, {rotationY: 0, ease:Power2.easeOut});
         break;
 
-      case 'fadeIn':
-        self.el.innerHTML = ''; //from the original attachHtml method
-        TweenMax.set(newView.$el, {opacity: 0});
-        self.el.appendChild(newView.el); //from the original attachHtml method
-        TweenMax.to(newView.$el, 0.5, {opacity: 1});
-        break;
-
-      case 'rotateIn':
-      self.el.innerHTML = ''; //from the original attachHtml method
-      TweenMax.set(newView.$el, {rotation: 45});
-      self.el.appendChild(newView.el); //from the original attachHtml method
-      TweenMax.to(newView.$el, 0.5, {rotation: 0});
-      break;
-
-      case 'scaleIn':
-        self.el.innerHTML = ''; //from the original attachHtml method
-        TweenMax.set(newView.$el, {scaleX:2, scaleY:2});
-        self.el.appendChild(newView.el); //from the original attachHtml method
-        TweenMax.to(newView.$el, 0.5, {scaleX:1, scaleY:1});
-        break;
-
-      case 'scaleOut':
-        self.el.innerHTML = ''; //from the original attachHtml method
-        TweenMax.set(newView.$el, {scaleX:0.8, scaleY:0.8});
-        self.el.appendChild(newView.el); //from the original attachHtml method
-        TweenMax.to(newView.$el, 0.5, {scaleX:1, scaleY:1});
-        break;
-
-
       case 'slideLeft':
         self.el.innerHTML = ''; //from the original attachHtml method
         TweenMax.set(newView.$el.children(), {left:'110%'});
