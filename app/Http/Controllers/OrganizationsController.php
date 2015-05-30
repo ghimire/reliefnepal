@@ -74,7 +74,7 @@ class OrganizationsController extends Controller {
 
         $organization = new Organization();
         $input = $request->except(['profile_picture', 'slug']);
-        $organization->$name = $request->get('name');
+        $organization->$name = $request->input('name');
         $slug = Str::slug($name).'-'.$organization->id;
         $organization->slug = $slug;
         $organization->fill($input);
@@ -130,9 +130,10 @@ class OrganizationsController extends Controller {
         $organization = $organization->findOrFail($id);
         $input = $request->only(Schema::getColumnListing('organizations'));
         $organization->fill($input);
-        if($organization->name != $request->input('name')){
-            $slug = Str::slug($request->input('name')).'-'.$organization->id;
+        if($request->has('name') && $organization->name != $request->input('name') && $request->user()->is_admin()){
+            $slug = Str::slug($request->input('name'));
             $organization->slug = $slug;
+            $organization->name = $request->input('name');
         }
         $organization->save();
 
