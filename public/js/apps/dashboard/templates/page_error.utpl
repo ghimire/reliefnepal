@@ -1,0 +1,11 @@
+<div class="alert alert-danger alert-dismissable page-error">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <h4><i class="icon fa fa-warning"></i> <strong>Whoops!</strong> <%- message %></h4>
+  <% if (errors) { %>
+  <ul>
+    <% _.each(errors, function(e) { %>
+      <li><%- e %></li>
+    <% }) %>
+  </ul>
+  <% } %>
+</div>

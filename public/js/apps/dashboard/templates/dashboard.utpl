@@ -1,0 +1,81 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Dashboard
+    <small>
+      Admin&nbsp;&nbsp;
+      <a href="#" class="helpLink" target="_blank" style="display:none;"><i class="glyphicon glyphicon-question-sign"></i></a>
+    </small>
+
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="span9">
+    <div class="row">
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-aqua animated bounceIn">
+          <div class="inner">
+            <h3>
+              Vendor
+            </h3>
+            <p id="numberOfOrganizations">
+              .. Vendors
+            </p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person-stalker"></i>
+          </div>
+          <a href="#vendors" class="small-box-footer" id="organizationLink">
+            Manage Vendors <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div><!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-red animated bounceIn">
+          <div class="inner">
+            <h3>Users</h3>
+            <p id="numberOfUsers">
+              .. Users
+            </p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person-add"></i>
+          </div>
+          <a href="#users" class="small-box-footer" id="usersLink">
+            Manage Users <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div><!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green animated bounceIn">
+            <div class="inner">
+                <h3>Settings</h3>
+                <p>
+                    Configure Settings
+                </p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-settings"></i>
+            </div>
+            <a href="#settings" class="small-box-footer" id="settingsLink">
+                Update Settings <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+      </div><!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+          &nbsp;
+      </div><!-- ./col -->
+
+    </div>
+
+    <div class="row connectedSortable">
+      <!--Nothing Here-->
+    </div>
+
+  </div>
+</section><!-- /.content -->

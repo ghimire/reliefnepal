@@ -1,0 +1,50 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Organizations
+    <small>
+      List&nbsp;&nbsp;
+      <a href="#" class="helpLink" target="_blank" style="display:none;">
+        <i class="glyphicon glyphicon-question-sign"></i>
+      </a>
+    </small>
+
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0;margin-left:5px;border-bottom: none;">
+    <li class="active"><a id="tabOrganization" href="#organizations">Organizations</a></li>
+    <% if (GLOBAL.user && GLOBAL.user.is_admin) {%>
+      <li class="text-primary"><a id="tabAdd" href="#organizations/add"><i class="fa fa-plus"></i> Add</a></li>
+    <% } %>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="tabPageOrganization">
+      <div id="OrganizationForm" class="box content-block" data-content="Form">
+        <div class="box-body table-responsive">
+          <div class="" role="grid" style="min-height: 500px">
+            <table id="grid" class="table table-striped dataTable">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th class="hidden-xs ">Phone #</th>
+                <th class="hidden-sm hidden-xs">Website</th>
+                <th>&nbsp;</th>
+              </tr>
+              </thead>
+              <tbody class="table-body">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- /.content -->

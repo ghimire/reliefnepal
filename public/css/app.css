@@ -1,0 +1,49 @@
+* {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.nav-pills>li>a {
+    padding: 5px 10px 5px 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px #008080;
+}
+
+.nav-pills>li>a:hover,.nav-pills>li>a:focus {
+    background-color: transparent;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    border-radius: 0;
+    border-bottom: 5px solid #008080;
+    background-color: transparent;
+}
+
+.flexible-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.flexible-container iframe,
+.flexible-container object,
+.flexible-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.result-grid address {
+    margin-top: 5px;
+    margin-bottom: 0;
+    display: block;
+}
+
+.merchant-intro {
+    padding-top: 0;
+}

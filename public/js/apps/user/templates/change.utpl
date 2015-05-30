@@ -1,0 +1,108 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    User
+    <small>
+      Edit User&nbsp;&nbsp;
+      <a href="#" class="helpLink" target="_blank" style="display:none;"><i
+          class="glyphicon glyphicon-question-sign"></i>
+      </a>
+    </small>
+
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0;margin-left:5px;border-bottom: none;">
+    <li class="active"><a id="tabUser" href="#users">Users</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="tabPageUser">
+      <div id="UserForm" class="content-block" data-content="Form">
+        <form class="form-horizontal" id="User_submit" role="form">
+          <div class="box-body">
+            <% if(id) { %>
+              <input type="hidden" id="id" name="id" value="<%- id %>" style="display:none;">
+            <% } %>
+            <input style="display:none" type="text" >
+            <input style="display:none" type="password" >
+
+            <div class="row">
+              <label class="col-sm-3 control-label" for="name">Name<font class="redFont">*</font></label>
+
+              <div class="controls col-sm-6">
+                <input required aria-required="true" class="form-control validate" type="text" id="name" name="name" value="<%- name %>">
+              </div>
+              <div class="controls col-sm-3">
+                <span class="help-inline control-label"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="col-sm-3 control-label" for="city">Organization
+              </label>
+
+              <div class="controls col-sm-6">
+                  <input required aria-required="true" class="form-control" type="text" id="org_id" name="org_id" value="<%- model.get('org_id') %>">
+              </div>
+              <div class="controls col-sm-3">
+                  <span class="help-inline control-label"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="col-sm-3 control-label" for="password">Password<font class="redFont">*</font></label>
+
+              <div class="controls col-sm-6">
+                <input required aria-required="true" class="form-control validate" type="password" id="password" name="password" value="<%- id?'*******':'' %>">
+              </div>
+              <div class="controls col-sm-3">
+                <span class="help-inline control-label"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="col-sm-3 control-label" for="name">Email<font class="redFont">*</font></label>
+
+              <div class="controls col-sm-6">
+                <input required aria-required="true" class="form-control validate" type="text" id="email" name="email" value="<%- email %>">
+              </div>
+              <div class="controls col-sm-3">
+                <span class="help-inline control-label"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="control-label col-sm-3" for="roles">Role<font class="redFont">*</font></label>
+
+              <div class="controls col-sm-6">
+                  <select class="form-control" id="roles" name="roles" <%- (id)?'disabled':'' %> title="Roles*">
+                      <option value="admin" <%- (/admin/.test(roles))?'selected':'' %> >Admin</option>
+                      <option value="user" <%- (!/user/.test(roles))?'selected':'' %> >User</option>
+                  </select>
+              </div>
+              <div class="controls col-sm-3">
+                  <span class="help-inline control-label"></span>
+              </div>
+            </div>
+
+            <div class="control-group row">
+              <div class="controls col-sm-9">
+                <button class="js-save saveBtn btn btn-primary pull-right"><i class="fa fa-save"></i> Save</button>
+                <button class="js-cancel cancelBtn btn pull-right" style="margin-right:5px;"><i class="fa fa-times-circle-o"></i> Cancel</button>
+              </div>
+              <div class="controls col-sm-3">
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- /.content -->

@@ -1,0 +1,107 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        <small>
+            Organization Information&nbsp;&nbsp;
+            <a href="#" class="helpLink" target="_blank" style="display:none;">
+                <i class="glyphicon glyphicon-question-sign"></i>
+            </a>
+        </small>
+
+    </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <div id="OrganizationInfo" class="content-block" style="padding-left:5px; padding-top: 10px; min-height: 500px">
+        <div class="row">
+            <div class="text-left col-md-12">
+                <div class="col-md-3">
+                    <img width="250px" src="<%- profile_picture || GLOBAL.DEFAULT_ORGANIZATION %>">
+                </div>
+                <div class="col-md-9">
+                    <h2><%- name %></h2>
+                    <br/>
+                    <a href="#organizations/<%- id %>/edit" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
+                    &nbsp; <a href="#organizations/<%- id %>/activities" class="btn btn-success"><i class="fa fa-flash"></i> Activities</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-6">
+                <table class="table table-striped">
+                    <tr>
+                        <td>Slug:</td>
+                        <td>
+                            <i class="glyphicon glyphicon-user"></i>
+                            <a href="<%- model.getUrl() %>" target="_blank">
+                                <%- slug %>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td><i class="glyphicon glyphicon-flag"></i> <%- status.toTitleCase() %></td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td><i class="glyphicon glyphicon-phone"></i> <%- phone %></td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td><i class="glyphicon glyphicon-phone"></i> <%- address %></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            <a href="mailto:<%- email %>">
+                                <%- email %>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Website:</td>
+                        <td><i class="glyphicon glyphicon-globe"></i>
+                            <a href="<%- website %>" target="_blank">
+                                <%- website %>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Facebook:</td>
+                        <td><i class="glyphicon glyphicon-link"></i>
+                            <a href="<%- facebook_url %>" target="_blank">
+                                <%- facebook_url %>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <% if (comment) { %>
+                    <tr>
+                        <td colspan="2">
+                            <div class="alert alert-default">
+                                <h4 class="text-muted">Comments:</h4>
+
+                                <p><%- comment %></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <% } %>
+                </table>
+            </div>
+
+            <div class="col-md-6">
+                <% if (description) { %>
+                    <div class="callout callout-default">
+                        <div class="description" style="white-space: pre-wrap"><%- description %></div>
+                    </div>
+                <% } else { %>
+                    <i class="text-muted">Description not available.</i>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- /.content -->

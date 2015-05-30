@@ -1,0 +1,73 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    <small>
+      User Information&nbsp;&nbsp;
+      <a href="#" class="helpLink" target="_blank" style="display:none;"><i
+          class="glyphicon glyphicon-question-sign"></i>
+      </a>
+    </small>
+
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <div id="UserInfo" class="content-block" style="padding-left:5px; padding-top: 10px; min-height: 500px">
+    <div class="row">
+      <div class="text-left col-md-12">
+        <div class="col-md-12">
+            <h2>
+                <img height="50px" width="50px" src="<%- model.gravatar_url() %>" >&nbsp;
+                <%- name %>
+            </h2>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="col-md-6">
+        <table class="table table-striped">
+          <tr>
+            <td>Email:</td>
+            <td><i class="glyphicon glyphicon-envelope"></i> <%- email %></td>
+          </tr>
+          <tr>
+            <td>Organization:</td>
+            <td>
+                <a href="#organizations/<%- org_id %>">
+                    <i class="glyphicon glyphicon-envelope"></i> <%- organization['name'] %>
+                </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Member Since:</td>
+            <td><i class="glyphicon glyphicon-star"></i> <%- created_at?moment(created_at).format('DD-MMM-YY h:mm:ss A'):'N/A' %></td>
+          </tr>
+          <% if(last_login) { %>
+          <tr>
+            <td>Last Login:</td>
+            <td><i class="glyphicon glyphicon-log-in"></i> <%- last_login?moment(last_login).format('DD-MMM-YY h:mm:ss A'):'N/A' %></td>
+          </tr>
+          <% } %>
+          <% if(last_login) { %>
+          <tr>
+            <td>Last Logout:</td>
+            <td><i class="glyphicon glyphicon-log-out"></i> <%- last_login?moment(last_login).format('DD-MMM-YY h:mm:ss A'):'N/A' %></td>
+          </tr>
+          <% } %>
+          <% if(last_ip) { %>
+          <tr>
+            <td>Last Know IP:</td>
+            <td><i class="glyphicon glyphicon-globe"></i> <%- last_ip %></td>
+          </tr>
+          <% } %>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<!-- /.content -->

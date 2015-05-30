@@ -1,0 +1,30 @@
+<td class="js-show-info">
+  <a href="#/organizations/<%- id %>">
+    <img src="<%- profile_picture || GLOBAL.DEFAULT_ORGANIZATION %>" height="20px"> &nbsp; <%- name %>
+  </a>
+</td>
+<td class="hidden-xs"><%- phone %></td>
+<td class="hidden-sm hidden-xs">
+    <a href="<%- website %>">
+        <%- website %>
+    </a>
+</td>
+<td class="center">
+  <div style="width:110px;">
+    <a href="<%- show_url() %>">
+      <img class="js-table-action"
+           src="<%- GLOBAL.STATIC_URL %>img/user.png"
+           style="cursor:pointer;" rel="tooltip"
+           title="View Organization Details">
+    </a>
+    <% if (model.is_admin()) {%>
+    <a href="<%- edit_url() %>">
+      <img
+          class="js-table-action"
+          src="<%- GLOBAL.STATIC_URL %>img/edit.png"
+          style="cursor:pointer;margin-left:15px;" rel="tooltip"
+          title="Edit">
+    </a>
+    <% } %>
+  </div>
+</td>

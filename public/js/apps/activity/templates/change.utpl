@@ -1,0 +1,91 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Activities
+    <small>
+      Edit Activity&nbsp;&nbsp;
+      <a href="#" class="helpLink" target="_blank" style="display:none;"><i
+          class="glyphicon glyphicon-question-sign"></i>
+      </a>
+    </small>
+
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0;margin-left:5px;border-bottom: none;">
+    <li class="active"><a id="tabActivity" href="#activities">Activities</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="tabPageActivity">
+      <div id="ActivityForm" class="content-block" data-content="Form">
+        <form class="form-horizontal" id="Activity_submit" role="form">
+          <div class="box-body">
+            <% if(id) { %>
+              <input type="hidden" id="id" name="id" value="<%- id %>" style="display:none;">
+            <% } %>
+              <input type="hidden" id="org_id" name="org_id" value="<%- org_id %>" style="display:none;">
+
+            <div class="row">
+              <label class="col-sm-3 control-label" for="name">Activity Name<font class="redFont">*</font></label>
+
+              <div class="controls col-sm-6">
+                <input required aria-required="true" class="form-control validate" type="text" id="name" name="name" value="<%- name %>">
+              </div>
+              <div class="controls col-sm-3">
+                <span class="help-inline control-label"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="col-sm-3 control-label" for="description">Description<font class="redFont">*</font></label>
+
+              <div class="controls col-sm-6">
+                  <textarea required aria-required="true" rows="10" class="form-control validate" id="description" name="description" ><%- description %></textarea>
+              </div>
+              <div class="controls col-sm-3">
+                  <span class="help-inline control-label"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="col-sm-3 control-label" for="address">Location</label>
+
+              <div class="controls col-sm-6">
+                  <input class="form-control geocomplete" type="text" id="address" name="address" value="<%- address %>">
+              </div>
+              <div class="controls col-sm-3">
+                  <span class="help-inline control-label"></span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="row">
+                <div id="map-canvas" style="width: 540px; height: 300px; margin-right: auto; margin-left: auto"></div>
+              </div>
+
+              <div class="controls col-sm-3">
+                  <span class="help-inline control-label"></span>
+              </div>
+            </div>
+
+            <div class="control-group row">
+              <div class="controls col-sm-9">
+                <button class="js-save saveBtn btn btn-primary pull-right"><i class="fa fa-save"></i> Save</button>
+                <button class="js-cancel cancelBtn btn btn-default pull-right" style="margin-right:5px;"><i class="fa fa-times-circle-o"></i> Cancel</button>
+              </div>
+              <div class="controls col-sm-3">
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- /.content -->

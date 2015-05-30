@@ -1,0 +1,50 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Users
+    <small>
+      Users&nbsp;&nbsp;
+      <a href="#" class="helpLink" target="_blank" style="display:none;">
+        <i class="glyphicon glyphicon-question-sign"></i>
+      </a>
+    </small>
+
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0;margin-left:5px;border-bottom: none;">
+    <li class="active"><a id="tabUser" href="#users">Users</a></li>
+    <li class="text-primary"><a href="#users/add"><i class="fa fa-plus"></i> Add</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="tabPageUser">
+      <div id="UserForm" class="content-block" data-content="Form">
+        <div class="box-body table-responsive">
+          <div class="form-inline" role="grid" style="min-height: 500px">
+            <table id="grid" class="table table-striped dataTable">
+              <thead>
+              <tr>
+                <th>ID#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Organization</th>
+                <th>&nbsp;</th>
+              </tr>
+              </thead>
+              <tbody class="table-body">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- /.content -->

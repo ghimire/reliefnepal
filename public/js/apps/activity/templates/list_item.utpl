@@ -1,0 +1,31 @@
+<td>
+    <a href="#/organizations/<%- org_id %>">
+        <%- organization['name'] %>
+    </a>
+</td>
+<td class="js-show-info">
+  <a href="<%- show_url() %>">
+    <%- name %>
+  </a>
+</td>
+<td><%- address %></td>
+<td><%- moment(updated_at + " +00:00").fromNow() %></td>
+<td class="center">
+  <div style="width:110px;">
+    <a href="<%- show_url() %>">
+      <img class="js-table-action"
+           src="<%- GLOBAL.STATIC_URL %>img/user.png"
+           style="cursor:pointer;" rel="tooltip"
+           title="View Activity Details">
+    </a>
+    <% if (model.is_admin()) {%>
+    <a href="<%- edit_url() %>">
+      <img
+          class="js-table-action"
+          src="<%- GLOBAL.STATIC_URL %>img/edit.png"
+          style="cursor:pointer;margin-left:15px;" rel="tooltip"
+          title="Edit">
+    </a>
+    <% } %>
+  </div>
+</td>

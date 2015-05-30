@@ -1,0 +1,12 @@
+/vendor
+/node_modules
+.env
+/.idea
+database.sqlite
+.DS_Store
+Thumb.db
+storage/tmp_*
+storage/settings.json
+*_avatar.jpg
+*_profile.jpg
+

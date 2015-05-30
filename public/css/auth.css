@@ -1,0 +1,79 @@
+/* Button Override */
+/*.btn {
+    border-radius: 0 !important;
+}*/
+/* *** */
+
+.dropdown-menu:after {
+    bottom: 100%;
+    right: 10px;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 10px solid rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    margin-left: -10px;
+}
+
+.redFont{
+    color: red;
+}
+
+.form-horizontal .row {
+    margin-bottom: 10px;
+}
+
+.dataTables_filter input {
+    height: 30px;
+}
+
+/* select2 style override */
+.select2-choice{
+    border: none !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    background-color: #FFF !important;
+    background-image: none !important;
+}
+
+.select2-container{
+    padding:3px !important;
+}
+
+.select2-arrow{
+    background-image: none !important;
+    background: #FFF !important;
+    border: none !important;
+}
+
+.select2-drop-active {
+    /*border: 1px solid black !important;*/
+    border-top: none !important;
+    background: #f0f0f0 !important;
+}
+
+/*** CUSTOM MODIFICATIONS ***/
+.content-wrapper {
+    width: auto !important;
+    background-color: #f9f9f9;
+    border: 0 !important;
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.no-link {
+    text-decoration: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    .table-responsive {
+        border: 0;
+    }
+}

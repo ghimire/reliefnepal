@@ -1,0 +1,222 @@
+/* --------------------------
+Results
+-------------------------- */
+.timestamp {
+    font-size: .8em;
+    color: #7a7a7a;
+}
+.result-grid {
+    padding: 0;
+    list-style-type: none;
+}
+.result-grid > li {
+    /* temp */
+
+    margin-bottom: 25px;
+    position: relative;
+    padding: 0 8px;
+}
+.merchant > ul {
+    padding: 0;
+    list-style-type: none;
+}
+.merchant a {
+    text-decoration: none;
+}
+.result-grid .merchant{
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #fff;
+    padding: 10px;
+    -moz-transform: translate(0,5px);
+    -webkit-transform: translate(0,5px);
+    -o-transform: translate(0,5px);
+    -ms-transform: translate(0,5px);
+    transform: translate(0,5px);
+}
+.result-grid .merchant:hover {
+    -webkit-box-shadow: 0 2px 12px rgba(43, 32, 21, 0.25);
+    -moz-box-shadow: 0 2px 12px rgba(43, 32, 21, 0.25);
+    box-shadow: 0 2px 12px rgba(43, 32, 21, 0.25);
+    position: relative;
+    z-index: 50;
+    -moz-transform: translate(0,-5px);
+    -webkit-transform: translate(0,-5px);
+    -o-transform: translate(0,-5px);
+    -ms-transform: translate(0,-5px);
+    transform: translate(0,-5px);
+}
+.result .merchant img {
+    width: 100%;
+}
+.result .link-merchant {
+    font-weight: bold;
+    display: block;
+    line-height: 1.5em;
+    text-decoration: none;
+}
+.result ul {
+    padding: 0;
+    list-style-type: none;
+}
+.result .link-merchant span {
+    display: block;
+}
+.result-grid .link-merchant span {
+    margin-top: 5px;
+}
+.result address {
+    font-size: 1.2em;
+    color: #8e7b68;
+}
+.pricing {
+    font-size: .9em;
+    font-weight: bold;
+    color: #73ba8c;
+}
+.result hr {
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    margin: 5px 0;
+}
+.result-grid .fav {
+    line-height: 2.4em;
+}
+.result .phone {
+    font-weight: bold;
+}
+.p-off {
+    font-size: .7em;
+}
+/* ratings */
+.rating {
+    padding-left: 0;
+}
+.rating > li {
+    /* fix inline-block issue for ie & moz */
+
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    /* solution via: http://foohack.com/2007/11/cross-browser-support-for-inline-block-styling/ */
+
+}
+.rating > li i:before {
+    margin: 0;
+    padding: 0;
+    width: .65em;
+}
+.rating .star-on {
+    color: #fb4d4b;
+}
+.rating .star-off {
+    color: #d8d8d8;
+}
+
+.merchant-stats .stat {
+    background: #eee;
+    color: #6f6c6c;
+}
+.merchant-intro {
+    padding: 6px 0;
+    color: #8e7b68;
+}
+/* --------------------------
+Discount Sticker
+-------------------------- */
+.discount {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #ff0000;
+    background-repeat: repeat-x;
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#ff0000), to(#ea444b));
+    /* Konqueror */
+
+    background-image: -moz-linear-gradient(#ff0000, #ea444b);
+    /* FF 3.6+ */
+
+    background-image: -ms-linear-gradient(#ff0000, #ea444b);
+    /* IE10 */
+
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff0000), color-stop(100%, #ea444b));
+    /* Safari 4+, Chrome 2+ */
+
+    background-image: -webkit-linear-gradient(#ff0000, #ea444b);
+    /* Safari 5.1+, Chrome 10+ */
+
+    background-image: -o-linear-gradient(#ff0000, #ea444b);
+    /* Opera 11.10 */
+
+    background-image: -ms-linear-gradient(top, #ff0000 0%, #ea444b 100%);
+    /* IE10+ */
+
+    background-image: linear-gradient(#ff0000, #ea444b);
+    /* the standard */
+
+    font-family: 'Fredoka One';
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: 3px solid #fff;
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+}
+.discount sup {
+    font-size: .5em;
+}
+.discount .percent {
+    display: block;
+    padding-top: 10px;
+    line-height: .25em;
+    font-size: 2em;
+}
+.result-grid .discount{
+    position: absolute;
+    z-index: 200;
+    top: -25px;
+    left: -25px;
+}
+
+
+
+
+/* --------------------------
+Search Grid View
+-------------------------- */
+.result-grid > li {
+    padding-bottom: 26px;
+}
+.result-grid .btn-action {
+    width: 100%;
+    margin: 5px 0 10px 0;
+}
+.result-grid .pricing,
+.result-grid address {
+    display: inline;
+}
+.result-grid hr {
+    margin: 10px 5px;
+}
+.result-grid .rating {
+    margin: 6px 0;
+}
+.result-grid .discount {
+    top: -10px;
+    left: -15px;
+}
