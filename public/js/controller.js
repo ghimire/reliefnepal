@@ -60,7 +60,8 @@ define([
       },
 
       activities:function (org_id) {
-        var activities = new ActivityModels.Activities({org_id: org_id});
+        var activities = new ActivityModels.Activities();
+        activities.setFilters({org_id: org_id});
         activities.fetch().then(function(){
           App.mainRegion.showAnimated(new ActivityListView({collection: activities, org_id: org_id}), {animationType: 'fadeIn'});
         });
@@ -78,7 +79,7 @@ define([
       activities_show:function (org_id, activity_id) {
         var activity = new ActivityModels.Activity({org_id: org_id, id: activity_id});
         activity.fetch().then(function(){
-          App.mainRegion.show(new ActivityShowView({model: activity}));
+          App.mainRegion.show(new ActivityShowView({model: activity, org_id: org_id}));
         });
       },
 

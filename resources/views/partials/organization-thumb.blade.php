@@ -25,14 +25,4 @@
         </address>
 
         <div class="clearfix"></div>
-        <ul class="stat rating pull-left" style="font-size: 1.2em">
-            @for($i=1;$i<= intval($organization->star); $i++)
-                <li class="star-on"><i class="fa fa-star"></i></li>
-            @endfor
-            @for($i=1;$i<= 5 - intval($organization->star); $i++)
-                <li class="star-off"><i class="fa fa-star"></i></li>
-            @endfor
-        </ul>
-
-        <div class="clearfix"></div>
     </div>

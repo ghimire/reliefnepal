@@ -3,19 +3,12 @@
                                 <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/LocalBusiness">
                                     <span itemprop="name">{{ $organization->name }}</span> ({{ $organization->city }})
                                 </div>
-                                <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-                                    <span itemprop="ratingValue">{{ $organization->star }}</span>
-                                </span>
                                 <span itemprop="author" itemscope itemtype="http://schema.org/Organization">
-                                    <span itemprop="name">Packers City</span>
+                                    <span itemprop="name">Nepal United</span>
                                 </span>
                             </div>
 
     <div class="merchant" style="{{ 'font-size:1.2em' }}">
-        @if ($organization->type == 'paid')
-            <div class="discount"><span class="percent"><i class="fa fa-thumbs-up"></i></span></div>
-        @endif
-
         <div class="merchant-thumb">
             <a href="{{ 'javascript:void(0)' }}">
                 <img src="{{ $organization->profile_picture }}" alt="" class="img-responsive">
@@ -35,10 +28,6 @@
         <div class="clearfix"></div>
         <address class="phone">
             <i class="fa fa-phone"></i> {{ $organization->phone }}
-            &nbsp;
-            @if ($organization->type == 'paid')
-            <span class="pull-right"><i class="fa fa-heart text-danger"></i></span>
-            @endif
         </address>
 
         <div class="clearfix"></div>
@@ -49,16 +38,6 @@
             </a>
             @endif
             &nbsp;
-            <div class="pull-right">
-                <ul class="stat rating pull-left" style="margin-top: 0; font-size: 1.2em">
-                    @for($i=1;$i<= intval($organization->star); $i++)
-                    <li class="star-on"><i class="fa fa-star"></i></li>
-                    @endfor
-                    @for($i=1;$i<= 5 - intval($organization->star); $i++)
-                        <li class="star-off"><i class="fa fa-star"></i></li>
-                    @endfor
-                </ul>
-            </div>
             <div class="clearfix"></div>
         </address>
 

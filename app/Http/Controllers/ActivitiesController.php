@@ -47,6 +47,10 @@ class ActivitiesController extends Controller {
             });
         }
 
+        if ($request->has('org_id')){
+            $activities = $activities->where('org_id', $request->input('org_id'));
+        }
+
         if($request->has('q')){
             $needle = $request->input('q');
             $activities = $activities->where('activity', 'like', $needle.'%');
@@ -111,6 +115,10 @@ class ActivitiesController extends Controller {
                     $query->where('id', $request->input('user_id'));
                 });
             });
+        }
+
+        if ($request->has('org_id')){
+            $activity = $activity->where('org_id', $request->input('org_id'));
         }
 
         $activity = $activity->findOrFail($id);

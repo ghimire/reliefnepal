@@ -19,6 +19,10 @@ define( [
 
       },
 
+      initialize: function(options){
+        _.extend(this, options);
+      },
+
       templateHelpers: function () {
         return {
           model: this.model,
@@ -38,6 +42,17 @@ define( [
       childViewContainer: 'tbody',
 
       events: {
+      },
+
+      initialize: function(options){
+        var view = this;
+        _.extend(this, options);
+
+        if(view.org_id){
+          view.collection.setFilters({
+            org_id: view.org_id
+          });
+        }
       },
 
       templateHelpers: function () {

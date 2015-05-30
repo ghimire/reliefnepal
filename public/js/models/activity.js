@@ -17,7 +17,7 @@ define([
           return {
             'user_id': GLOBAL.user.id
           }
-        } else return {}
+        }
       },
 
       defaults: {
@@ -54,7 +54,7 @@ define([
           return {
             'user_id': GLOBAL.user.id
           }
-        } else return {}
+        }
       }
 
     });
