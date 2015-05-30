@@ -39,7 +39,6 @@ Route::get('/', function()
 });
 
 Route::get('/portal', 'PortalController@index');
-Route::post('/quick_quote', 'CommonsController@sendQuote');
 
 Event::listen('401', function()
 {
