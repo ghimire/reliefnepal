@@ -7,7 +7,6 @@ Route::pattern('slug', '[a-z0-9-]+');
 
 Route::bind('slug', function($slug)
 {
-    //return (is_numeric($slug) ? Organization::findOrFail($slug):Organization::whereSlug($slug)->first());
     return Organization::whereSlug($slug)->firstOrFail();
 });
 
@@ -27,18 +26,10 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('/o/{slug}', function(Organization $organization)
-{
-    return view('organization', compact('organization'));
+Route::get('/', 'PortalController@index');
+Route::get('/home', function(){
+    return redirect('/');
 });
-
-Route::get('/', function()
-{
-    $organizations = Organization::all();
-    return view('landing', compact('organizations'));
-});
-
-Route::get('/portal', 'PortalController@index');
 
 Event::listen('401', function()
 {

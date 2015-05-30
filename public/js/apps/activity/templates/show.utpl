@@ -19,7 +19,9 @@
             <div class="text-left col-md-12">
                 <div class="col-md-9">
                     <h2><%- name %>
+                        <% if(GLOBAL.user) { %>
                         &nbsp; <a href="<%- edit_url() %>" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
+                        <% } %>
                     </h2>
                 </div>
             </div>

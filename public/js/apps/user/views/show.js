@@ -13,7 +13,6 @@ define( [
       template: _.template(template),
 
       events: {
-
       },
 
       templateHelpers: function () {

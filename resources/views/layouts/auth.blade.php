@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @show
 </head>
 
-<body class="skin skin-green">
+<body class="skin skin-green @if(!$user) sidebar-collapse @endif">
 <div data-container="wrapper" class="wrapper">
 
     <!-- Main Header -->
@@ -76,12 +76,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               "id": "{{ $user->id }}",
               "is_admin": "{{ $user->is_admin() }}" === "1",
               "roles": "{{ $user->roles }}"
-            },
-            @else
-            'user': {
-                "id": null,
-                "is_admin": false,
-                "roles": ""
             },
             @endif
             'STATIC_URL': "{{ asset('/') }}",

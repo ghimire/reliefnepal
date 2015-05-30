@@ -77,7 +77,7 @@ class AuthController extends Controller {
 
         $this->auth->logout();
 
-        return redirect('/portal');
+        return redirect('/');
     }
 
 }

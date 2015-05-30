@@ -10,6 +10,7 @@
 </td>
 <td><%- address %></td>
 <td><%- moment(updated_at + " +00:00").fromNow() %></td>
+<% if(GLOBAL.user) { %>
 <td class="center">
   <div style="width:110px;">
     <a href="<%- show_url() %>">
@@ -29,3 +30,4 @@
     <% } %>
   </div>
 </td>
+<% } %>

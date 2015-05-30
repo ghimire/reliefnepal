@@ -32,7 +32,9 @@
                 <th>Name</th>
                 <th class="hidden-xs ">Phone #</th>
                 <th class="hidden-sm hidden-xs">Website</th>
-                <th>&nbsp;</th>
+                <% if(GLOBAL.user) { %>
+                  <th>&nbsp;</th>
+                <% } %>
               </tr>
               </thead>
               <tbody class="table-body">

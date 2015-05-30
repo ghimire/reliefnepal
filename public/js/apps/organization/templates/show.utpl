@@ -23,22 +23,15 @@
                 <div class="col-md-9">
                     <h2><%- name %></h2>
                     <br/>
+                    <% if(GLOBAL.user) { %>
                     <a href="#organizations/<%- id %>/edit" class="btn btn-default"><i class="fa fa-edit"></i> Edit</a>
+                    <% } %>
                     &nbsp; <a href="#organizations/<%- id %>/activities" class="btn btn-success"><i class="fa fa-flash"></i> Activities</a>
                 </div>
             </div>
             <div class="clearfix"></div>
             <div class="col-md-6">
                 <table class="table table-striped">
-                    <tr>
-                        <td>Slug:</td>
-                        <td>
-                            <i class="glyphicon glyphicon-user"></i>
-                            <a href="<%- model.getUrl() %>" target="_blank">
-                                <%- slug %>
-                            </a>
-                        </td>
-                    </tr>
                     <tr>
                         <td>Status:</td>
                         <td><i class="glyphicon glyphicon-flag"></i> <%- status.toTitleCase() %></td>

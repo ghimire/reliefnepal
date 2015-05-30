@@ -16,7 +16,9 @@
 <section class="content">
   <ul class="nav nav-tabs" id="modTab" style="margin-bottom:0;margin-left:5px;border-bottom: none;">
     <li class="active"><a id="tabActivity" href="#activities">Activities</a></li>
+      <% if(GLOBAL.user) { %>
     <li class="text-primary"><a id="tabAdd" href="#organizations/<%- org_id %>/activities/add"><i class="fa fa-plus"></i> Add</a></li>
+      <% } %>
   </ul>
 
   <div class="tab-content">
@@ -31,7 +33,9 @@
                 <th>Activity Name</th>
                 <th>Location</th>
                 <th class="hidden-xs ">Last Updated</th>
-                <th>&nbsp;</th>
+                <% if(GLOBAL.user) { %>
+                  <th>&nbsp;</th>
+                <% } %>
               </tr>
               </thead>
               <tbody class="table-body">
